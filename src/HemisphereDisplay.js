@@ -1,7 +1,7 @@
-const HemisphereDisplay = () => {
+const HemisphereDisplay = (props) => {
     return (
         <>
-            Hey you are in Northern hemisphere
+            {props.latitude}
         </>
     )
 }

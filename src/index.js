@@ -1,7 +1,8 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
+import HemisphereDisplay from './HemisphereDisplay';
 class App extends React.Component {
-    
+
     state = { latitude: null, error: null }
 
     componentDidMount(){
@@ -15,12 +16,11 @@ class App extends React.Component {
         )
     }
     render() {
-        
+        const { latitude, error } = this.state
         return (
             <div>
-                <p>Data</p>
-                <p>{this.state.error ? this.state.error : ''}</p>
-                <p>{this.state.latitude ? this.state.latitude : ''}</p>
+                <p>{!error && !latitude ? 'Loading....' : ''}</p>
+                {latitude ? <HemisphereDisplay latitude={latitude} /> : null}
             </div>
         )
     }
