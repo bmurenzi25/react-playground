@@ -1,13 +1,23 @@
-import northern from './images/northern-hemisphere.webp'
-import southern from './images/southern-hemisphere.jpeg'
+import northernPic from './images/northern-hemisphere.webp'
+import southernPic from './images/southern-hemisphere.jpeg'
 
+const hemisphereConfig = {
+    northern: {
+        text: 'You are in northern hemisphere',
+        picture: northernPic
+    },
+    southern: {
+        text: 'You are in southern hemisphere',
+        picture: southernPic
+    }
+}
 const HemisphereDisplay = ({ latitude }) => {
-    const hemisphere = latitude > 0 ? 'Northern Hemisphere' : 'Southern Hemisphere'
-    const image = latitude > 0 ? northern : southern
+    const hemisphere = latitude > 0 ? 'northern' : 'southern'
+    const {text, picture} = hemisphereConfig[hemisphere]
     return (
         <>
-            <img src={image} alt={hemisphere} />
-            <p>You are in {hemisphere}</p>
+            <img src={picture} alt={hemisphere} />
+            <p>{text}</p>
         </>
     )
 }
