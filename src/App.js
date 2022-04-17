@@ -5,6 +5,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UserCard from './components/UserCard';
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,6 +15,7 @@ const App = () => {
           <Route exact path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/user/:username' element={<UserCard />} />
         </Routes>
       </div>
     </BrowserRouter>
