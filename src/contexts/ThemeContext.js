@@ -4,11 +4,11 @@ export const ThemeContext = createContext();
 class ThemeContextProvider extends Component {
   state = {
     isDarkTheme: true,
-    darkTheme: {
+    lightTheme: {
       background: '#d8ddf1',
       text: '#222',
     },
-    lightTheme: {
+    darkTheme: {
       background: '#5c5c5c',
       text: '#fff',
     },
